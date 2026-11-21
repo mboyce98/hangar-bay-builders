@@ -1,4 +1,4 @@
-# Kitforge — going live
+# Hangar Bay Builders — going live
 
 The site runs in **demo mode** until you connect it to Supabase. In demo mode, accounts and posts are saved only in your own browser.
 
@@ -10,7 +10,7 @@ The site runs in **demo mode** until you connect it to Supabase. In demo mode, a
 
 ## 1. Create the Supabase project
 1. Sign up at https://supabase.com and click **New project**.
-2. Name it `kitforge`. Click **Generate a password** and save it in your password manager.
+2. Name it `hangar-bay-builders`. Click **Generate a password** and save it in your password manager.
 3. Pick the region closest to your visitors, then click **Create**.
 
 ## 2. Create the database
@@ -24,9 +24,9 @@ The site runs in **demo mode** until you connect it to Supabase. In demo mode, a
 3. ⚠️ Never put the **secret** or **service_role** key in the site.
 
 ## 4. Put the site on GitHub Pages
-1. Create a GitHub repo (for example `kitforge`) and upload these files: `index.html`, `styles.css`, `app.js`, `community.js`.
+1. Create a GitHub repo (for example `hangar-bay-builders`) and upload these files: `index.html`, `styles.css`, `app.js`, `community.js`.
 2. Go to **Settings → Pages → Source: Deploy from a branch → main / root**.
-3. Your site will be at `https://YOURNAME.github.io/kitforge/`.
+3. Your site will be at `https://YOURNAME.github.io/hangar-bay-builders/`.
 
 ## 5. Tell Supabase where your site lives
 1. In Supabase, go to **Authentication → URL Configuration**.

@@ -1,5 +1,5 @@
 /* =========================================================
-   KITFORGE — shared site code (used by index.html and
+   HANGAR BAY BUILDERS — shared site code (used by index.html and
    commissions.html). Community features live in community.js.
    ========================================================= */
 
@@ -167,7 +167,7 @@ function setStatus(el, type, msg) {
 /* Sends a submission as JSON. Returns "sent", "demo" (no endpoint set) or throws. */
 async function sendForm(endpoint, data) {
   if (!endpoint) {
-    console.info("[Kitforge] Demo mode — no endpoint set in FORMS. Would have sent:", data);
+    console.info("[Hangar Bay Builders] Demo mode — no endpoint set in FORMS. Would have sent:", data);
     return "demo";
   }
   const res = await fetch(endpoint, {

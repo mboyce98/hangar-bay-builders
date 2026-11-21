@@ -1,4 +1,4 @@
-# Kitforge
+# Hangar Bay Builders
 
 A creators hub for mobile suit model builders: community feed, chat, member profiles, commissions and a shop.
 

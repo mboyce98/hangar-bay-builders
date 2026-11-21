@@ -1,5 +1,5 @@
 -- =========================================================
--- KITFORGE community — Supabase setup (accounts + content)
+-- HANGAR BAY BUILDERS community — Supabase setup (accounts + content)
 -- Paste this whole file into Supabase → SQL Editor → Run.
 -- Run it ONCE on a fresh project.
 --

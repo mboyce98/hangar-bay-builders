@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kitforge — Mobile Suit Builders Hub</title>
+  <title>Hangar Bay Builders — Mobile Suit Model Builders Community</title>
   <meta name="description" content="A community for mobile suit model kit builders. Share your builds, get feedback on WIPs, and chat with other modelers.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
         <path d="M20 9 L28 14 L20 30 L12 14 Z" fill="#e5383b"/>
         <path d="M12 14 L20 19 L28 14" fill="none" stroke="#ffc233" stroke-width="2"/>
       </svg>
-      <span>KIT<em>FORGE</em></span>
+      <span>HANGAR&nbsp;<em>BAY</em><small>BUILDERS</small></span>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#community">Community</a></li>
@@ -51,47 +51,10 @@
     <div class="hero-visual" aria-hidden="true">
       <span class="hud-corner tl"></span><span class="hud-corner tr"></span>
       <span class="hud-corner bl"></span><span class="hud-corner br"></span>
-      <span class="hud-label" style="top:10px;left:40px">UNIT // KF-01 "VANGUARD"</span>
+      <span class="hud-label" style="top:10px;left:40px">PILOT HUB // ONLINE</span>
       <span class="hud-label" style="bottom:10px;right:40px">STATUS: OPERATIONAL</span>
       <div class="scan"></div>
-      <svg viewBox="0 0 400 400">
-        <defs>
-          <linearGradient id="armor" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c9d2e3"/>
-          </linearGradient>
-          <linearGradient id="armorShade" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#aab6cc"/><stop offset="1" stop-color="#e9eef7"/>
-          </linearGradient>
-          <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-        </defs>
-        <circle cx="200" cy="200" r="170" fill="none" stroke="#2a3550" stroke-dasharray="4 8"/>
-        <circle cx="200" cy="200" r="130" fill="none" stroke="#2f6fff33"/>
-        <path d="M200 120 L120 50 L132 48 L200 105 L268 48 L280 50 Z" fill="#ffc233"/>
-        <path d="M188 112 L200 78 L212 112 Z" fill="#e5383b"/>
-        <path d="M130 140 Q200 90 270 140 L282 220 L260 250 L140 250 L118 220 Z" fill="url(#armor)" stroke="#1b2334" stroke-width="3"/>
-        <path d="M170 110 L200 98 L230 110 L224 160 L176 160 Z" fill="#2f6fff" stroke="#1b2334" stroke-width="3"/>
-        <path d="M118 220 L140 250 L140 290 L112 262 Z" fill="url(#armorShade)" stroke="#1b2334" stroke-width="3"/>
-        <path d="M282 220 L260 250 L260 290 L288 262 Z" fill="url(#armorShade)" stroke="#1b2334" stroke-width="3"/>
-        <path d="M142 180 L258 180 L250 212 L150 212 Z" fill="#0b0e14" stroke="#1b2334" stroke-width="3"/>
-        <g filter="url(#glow)">
-          <path d="M156 188 L196 192 L192 204 L160 202 Z" fill="#3ddc97"/>
-          <path d="M244 188 L204 192 L208 204 L240 202 Z" fill="#3ddc97"/>
-        </g>
-        <path d="M160 222 L240 222 L232 290 L200 308 L168 290 Z" fill="url(#armor)" stroke="#1b2334" stroke-width="3"/>
-        <path d="M182 240 L218 240 L214 270 L186 270 Z" fill="#e5383b" stroke="#1b2334" stroke-width="2"/>
-        <line x1="190" y1="248" x2="210" y2="248" stroke="#1b2334" stroke-width="2"/>
-        <line x1="190" y1="256" x2="210" y2="256" stroke="#1b2334" stroke-width="2"/>
-        <line x1="191" y1="264" x2="209" y2="264" stroke="#1b2334" stroke-width="2"/>
-        <path d="M150 150 L176 160 M250 150 L224 160 M140 250 L160 222 M260 250 L240 222" stroke="#1b2334" stroke-width="2" fill="none"/>
-        <text x="262" y="170" font-family="JetBrains Mono, monospace" font-size="9" fill="#e5383b">KF</text>
-        <text x="122" y="170" font-family="JetBrains Mono, monospace" font-size="9" fill="#2f6fff">01</text>
-        <path d="M300 200 L350 200 L362 188" stroke="#2f6fff" fill="none"/>
-        <circle cx="300" cy="200" r="3" fill="#2f6fff"/>
-        <text x="320" y="216" font-family="JetBrains Mono, monospace" font-size="9" fill="#8a96b0">SENSOR</text>
-        <path d="M100 280 L50 280 L40 292" stroke="#ffc233" fill="none"/>
-        <circle cx="100" cy="280" r="3" fill="#ffc233"/>
-        <text x="40" y="272" font-family="JetBrains Mono, monospace" font-size="9" fill="#8a96b0">PANEL LINE</text>
-      </svg>
+      <img class="hero-img" src="images/hero.png" alt="White and red mobile suit head with a gold V-fin antenna" width="555" height="553">
     </div>
   </div>
 </header>
@@ -229,7 +192,7 @@
   <div class="wrap">
     <div class="foot">
       <div>
-        <a href="#top" class="logo"><span>KIT<em>FORGE</em></span></a>
+        <a href="#top" class="logo"><span>HANGAR&nbsp;<em>BAY</em><small>BUILDERS</small></span></a>
         <p>A community for mobile suit model builders.</p>
       </div>
       <div><h6>Hangar</h6><ul><li><a href="#community">Community</a></li><li><a href="#creators">Pilots</a></li></ul></div>
@@ -237,7 +200,7 @@
       <div><h6>Services</h6><ul><li><a href="commissions.html">Commissions</a></li></ul></div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 KITFORGE. Fan-made hub — not affiliated with any kit manufacturer.</span>
+      <span>© 2026 Hangar Bay Builders. Fan-made hub — not affiliated with any kit manufacturer.</span>
       <span>SYS.STATUS: ALL UNITS NOMINAL</span>
     </div>
   </div>
@@ -252,7 +215,7 @@
 </div>
 <div class="toast" id="toast"></div>
 
-<script src="app.js"></script>
-<script src="community.js"></script>
+<script src="app.js?v=4"></script>
+<script src="community.js?v=4"></script>
 </body>
 </html>

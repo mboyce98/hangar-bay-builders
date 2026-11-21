@@ -1,5 +1,5 @@
 /* =========================================================
-   KITFORGE — Community: accounts, profiles, build posts, chat
+   HANGAR BAY BUILDERS — Community: accounts, profiles, build posts, chat
 
    DEMO MODE (default): accounts, posts and chat are saved only in
    this browser and passwords aren't checked. For trying it out.
@@ -273,6 +273,12 @@ async function supabaseDb() {
   const changeFns = [], authFns = [];
   const ok = ({ data, error }) => { if (error) throw new Error(error.message); return data; };
   const redirectTo = location.origin + location.pathname;
+  // Only offer "Continue with GitHub" if it's switched on in Supabase.
+  let githubEnabled = false;
+  try {
+    const r = await fetch(`${BACKEND.supabaseUrl}/auth/v1/settings`, { headers: { apikey: BACKEND.supabaseAnonKey } });
+    githubEnabled = !!(await r.json()).external?.github;
+  } catch {}
   const AUTHOR = "author:profiles!%s_user_id_fkey(id,username,avatar_url)";
   const author = (table) => AUTHOR.replace("%s", table);
   const likeEsc = (s) => String(s).replace(/[\\%_]/g, "\\$&");
@@ -306,6 +312,7 @@ async function supabaseDb() {
 
   return {
     mode: "live",
+    githubEnabled,
     // ---- auth ----
     async currentUser() {
       const { data } = await sb.auth.getSession();
@@ -472,7 +479,7 @@ function openAuth(mode = "signin", reason = "") {
         <button class="${signup ? "" : "on"}" data-auth="signin">Sign in</button>
         <button class="${signup ? "on" : ""}" data-auth="signup">Create account</button>
       </div>
-      ${db.mode === "live" ? `<button class="btn btn-ghost gh-btn" id="ghBtn" type="button">
+      ${db.githubEnabled ? `<button class="btn btn-ghost gh-btn" id="ghBtn" type="button">
           <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.81.06 1.23.83 1.23.83.72 1.23 1.88.87 2.34.67.07-.52.28-.87.51-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
           Continue with GitHub</button><div class="or"><span>or use email</span></div>` : ""}
       <form id="authForm" class="share-form" novalidate>
