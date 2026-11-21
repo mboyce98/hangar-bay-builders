@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Archives — Hangar Bay Builders</title>
+  <meta name="description" content="Every Gundam series and timeline explained: Universal Century, Cosmic Era, After Colony and more, plus key characters, mobile suits and where to start watching.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M20 2 L36 11 V29 L20 38 L4 29 V11 Z" fill="none" stroke="#2f6fff" stroke-width="2.5"/>
+        <path d="M20 9 L28 14 L20 30 L12 14 Z" fill="#e5383b"/>
+        <path d="M12 14 L20 19 L28 14" fill="none" stroke="#ffc233" stroke-width="2"/>
+      </svg>
+      <span>HANGAR&nbsp;<em>BAY</em><small>BUILDERS</small></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#community">Community</a></li>
+      <li><a href="index.html#learn">Learn</a></li>
+      <li><a href="index.html#creators">Pilots</a></li>
+      <li><a href="archives.html" class="active">Archives</a></li>
+      <li><a href="commissions.html">Commissions</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <a href="index.html" class="back-link">← Back to the hangar</a>
+    <div class="eyebrow">// The Archives</div>
+    <h1>Every Gundam, explained</h1>
+    <p class="lead">Gundam spans more than four decades and a dozen separate timelines. Here's every major series, the history of each world, and the characters and mobile suits worth knowing, so you know the story behind the kit on your bench. Summaries are spoiler-light.</p>
+  </div>
+</header>
+
+<section class="page-body" id="start">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">// 01 — New here?</div>
+        <h2>Where to start</h2>
+      </div>
+      <p>No need to watch in order. Each of these works as a first series, and most timelines are completely separate.</p>
+    </div>
+    <div class="start-grid" id="startGrid"></div>
+  </div>
+</section>
+
+<section id="eras">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">// 02 — Timelines</div>
+        <h2>The calendars of Gundam</h2>
+      </div>
+      <p>Every timeline has its own calendar. The letters before the year (U.C. 0079, C.E. 71…) tell you which world you're in. Tap a timeline to see its series.</p>
+    </div>
+    <div class="era-grid" id="eraGrid"></div>
+  </div>
+</section>
+
+<section id="series">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">// 03 — The shows</div>
+        <h2>Series &amp; films</h2>
+      </div>
+      <div class="series-tools">
+        <input id="seriesSearch" type="search" placeholder="Search pilots, suits, series…" aria-label="Search series">
+        <span class="muted mono-sm" id="seriesCount"></span>
+      </div>
+    </div>
+    <div class="filters" id="seriesFilters" style="margin-bottom:20px"></div>
+    <div class="series-grid" id="seriesGrid"></div>
+  </div>
+</section>
+
+<section id="characters">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">// 04 — Pilot files</div>
+        <h2>Characters to know</h2>
+      </div>
+      <p>The pilots, rivals and leaders you'll see on box art and in conversation.</p>
+    </div>
+    <div class="char-grid" id="charGrid"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom" style="margin-top:0;border-top:0;padding-top:0">
+      <span>© 2026 Hangar Bay Builders. Fan-made hub — not affiliated with Sunrise, Bandai Namco or any kit manufacturer. Gundam is a trademark of its respective owners.</span>
+      <a href="index.html" style="color:var(--blue)">← Back to the hangar</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="app.js?v=5"></script>
+<script src="lore.js?v=5"></script>
+</body>
+</html>

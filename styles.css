@@ -524,3 +524,55 @@ img.c-avatar { object-fit: cover; padding: 0; }
 }
 .logo small { font-family: var(--mono); font-size: .62rem; font-weight: 700; letter-spacing: .2em; color: var(--muted); margin-left: 8px; }
 @media (max-width: 420px) { .logo small { display: none; } }
+
+/* ---------- ARCHIVES PAGE ---------- */
+.start-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.start-card { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; transition: .2s; }
+.start-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+.start-card b { font-family: var(--sans); font-size: 1.1rem; text-transform: uppercase; line-height: 1.15; }
+.start-card span:last-child { font-family: var(--mono); font-size: .72rem; color: var(--muted); }
+.era-tag { align-self: flex-start; font-family: var(--mono); font-size: .68rem; font-weight: 700; padding: 3px 8px; border-radius: 6px;
+  color: var(--ec); background: color-mix(in srgb, var(--ec) 15%, transparent); border: 1px solid color-mix(in srgb, var(--ec) 45%, transparent); }
+
+.era-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
+.era-card { text-align: left; padding: 20px; cursor: pointer; border-top: 3px solid var(--ec); display: flex; flex-direction: column; gap: 6px; transition: .2s; }
+.era-card:hover { transform: translateY(-3px); border-color: var(--ec); }
+.era-abbr { font-family: var(--mono); font-weight: 700; color: var(--ec); font-size: .85rem; }
+.era-card h4 { font-family: var(--sans); font-size: 1.25rem; text-transform: uppercase; }
+.era-card p { color: var(--muted); font-size: .88rem; flex: 1; }
+.era-count { font-family: var(--mono); font-size: .72rem; color: var(--ec); margin-top: 4px; }
+
+.series-tools { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.series-tools input { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; min-width: 260px; outline: none; }
+.series-tools input:focus { border-color: var(--blue); }
+.series-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; align-items: start; }
+.series-card { padding: 22px; border-left: 3px solid var(--ec); scroll-margin-top: 90px; transition: box-shadow .4s; }
+.series-card.flash { box-shadow: 0 0 0 2px var(--ec), 0 0 40px -6px var(--ec); }
+.series-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.series-meta { font-family: var(--mono); font-size: .72rem; color: var(--muted); }
+.start-badge { font-family: var(--mono); font-size: .62rem; font-weight: 700; padding: 3px 7px; border-radius: 5px; background: #3ddc9722; color: var(--green); }
+.series-card h3 { font-family: var(--sans); font-size: 1.45rem; text-transform: uppercase; line-height: 1.1; margin: 10px 0 4px; }
+.series-setting { font-family: var(--mono); font-size: .74rem; color: var(--ec); margin-bottom: 10px; }
+.series-card > p { color: #c4cbdb; font-size: .92rem; }
+.series-card details { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+.series-card summary { cursor: pointer; font-family: var(--mono); font-size: .76rem; color: var(--blue); text-transform: uppercase; letter-spacing: .08em; }
+.detail-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; }
+.detail-cols h5 { font-family: var(--mono); font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 6px; }
+.detail-cols ul { list-style: none; display: grid; gap: 4px; font-size: .86rem; }
+.detail-cols li::before { content: "▸ "; color: var(--ec); }
+
+.char-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.char-card { padding: 18px; }
+.char-top { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; }
+.char-initial { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; font-family: var(--sans); font-weight: 700; font-size: 1.2rem;
+  color: var(--ec); background: color-mix(in srgb, var(--ec) 15%, transparent); border: 1.5px solid var(--ec); }
+.char-card h4 { font-family: var(--sans); font-size: 1.15rem; text-transform: uppercase; line-height: 1.1; }
+.char-card small { font-family: var(--mono); font-size: .66rem; color: var(--muted); }
+.char-card p { color: var(--muted); font-size: .88rem; }
+
+@media (max-width: 560px) {
+  .series-grid { grid-template-columns: 1fr; }
+  .series-tools input { min-width: 0; width: 100%; }
+  .series-tools { width: 100%; }
+  .detail-cols { grid-template-columns: 1fr; }
+}
