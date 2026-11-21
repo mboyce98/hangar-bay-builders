@@ -23,14 +23,15 @@ The site runs in **demo mode** until you connect it to Supabase. In demo mode, a
 2. Paste both into `BACKEND` at the top of `community.js`.
 3. ⚠️ Never put the **secret** or **service_role** key in the site.
 
-## 4. Put the site on GitHub Pages
-1. Create a GitHub repo (for example `hangar-bay-builders`) and upload these files: `index.html`, `styles.css`, `app.js`, `community.js`.
-2. Go to **Settings → Pages → Source: Deploy from a branch → main / root**.
-3. Your site will be at `https://YOURNAME.github.io/hangar-bay-builders/`.
+## 4. Put the site online (Netlify)
+1. Push these files to a GitHub repo (for example `hangar-bay-builders`).
+2. On https://app.netlify.com: **Add new project → Import from GitHub**, pick the repo, leave build settings empty, click **Deploy**.
+3. In the project overview, click **Make public** so anyone can visit.
+4. Your site is at `https://YOUR-PROJECT.netlify.app/`. Every push to `main` redeploys it automatically.
 
 ## 5. Tell Supabase where your site lives
 1. In Supabase, go to **Authentication → URL Configuration**.
-2. Set **Site URL** to your GitHub Pages address.
+2. Set **Site URL** to your Netlify address.
 3. Add the same address under **Redirect URLs**. Sign-up confirmation and password-reset emails link back to this address.
 
 ## 6. (Optional) "Continue with GitHub" sign-in
