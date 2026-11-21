@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kitforge — Mobile Suit Builders Hub</title>
+  <meta name="description" content="A creators hub for mobile suit model kit builders. Showcase builds, learn techniques, request custom commissions, and shop finished models.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="#top" class="logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M20 2 L36 11 V29 L20 38 L4 29 V11 Z" fill="none" stroke="#2f6fff" stroke-width="2.5"/>
+        <path d="M20 9 L28 14 L20 30 L12 14 Z" fill="#e5383b"/>
+        <path d="M12 14 L20 19 L28 14" fill="none" stroke="#ffc233" stroke-width="2"/>
+      </svg>
+      <span>KIT<em>FORGE</em></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hub">Hub</a></li>
+      <li><a href="#community">Community</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#commissions">Commissions</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#learn">Learn</a></li>
+      <li><a href="#creators">Creators</a></li>
+    </ul>
+    <div class="nav-cta">
+      <div id="navAccount"></div>
+      <a href="#commissions" class="btn btn-primary btn-sm">Request a Build</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="tag"><span class="dot"></span> COMMISSIONS OPEN — 4 SLOTS LEFT</span>
+      <h1>Build. <span class="hl">Paint.</span><br><span class="blue">Deploy.</span></h1>
+      <p class="lead">The hangar for mobile suit model builders. Share your builds, chat with other modelers, level up your techniques, commission a custom piece, or pick up a finished kit for the shelf.</p>
+      <div class="hero-actions">
+        <a href="#commissions" class="btn btn-primary">Commission a Build</a>
+        <a href="#community" class="btn btn-ghost">Join the Community</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b data-count="142">0</b><span>Builds completed</span></div>
+        <div class="stat"><b data-count="87">0</b><span>Commissions delivered</span></div>
+        <div class="stat"><b data-count="4.9" data-dec="1">0</b><span>Avg. client rating</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <span class="hud-corner tl"></span><span class="hud-corner tr"></span>
+      <span class="hud-corner bl"></span><span class="hud-corner br"></span>
+      <span class="hud-label" style="top:10px;left:40px">UNIT // KF-01 "VANGUARD"</span>
+      <span class="hud-label" style="bottom:10px;right:40px">STATUS: OPERATIONAL</span>
+      <div class="scan"></div>
+      <!-- Original mech head illustration -->
+      <svg viewBox="0 0 400 400">
+        <defs>
+          <linearGradient id="armor" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c9d2e3"/>
+          </linearGradient>
+          <linearGradient id="armorShade" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#aab6cc"/><stop offset="1" stop-color="#e9eef7"/>
+          </linearGradient>
+          <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <circle cx="200" cy="200" r="170" fill="none" stroke="#2a3550" stroke-dasharray="4 8"/>
+        <circle cx="200" cy="200" r="130" fill="none" stroke="#2f6fff33"/>
+        <!-- antenna -->
+        <path d="M200 120 L120 50 L132 48 L200 105 L268 48 L280 50 Z" fill="#ffc233"/>
+        <path d="M188 112 L200 78 L212 112 Z" fill="#e5383b"/>
+        <!-- helmet -->
+        <path d="M130 140 Q200 90 270 140 L282 220 L260 250 L140 250 L118 220 Z" fill="url(#armor)" stroke="#1b2334" stroke-width="3"/>
+        <path d="M170 110 L200 98 L230 110 L224 160 L176 160 Z" fill="#2f6fff" stroke="#1b2334" stroke-width="3"/>
+        <!-- cheek vents -->
+        <path d="M118 220 L140 250 L140 290 L112 262 Z" fill="url(#armorShade)" stroke="#1b2334" stroke-width="3"/>
+        <path d="M282 220 L260 250 L260 290 L288 262 Z" fill="url(#armorShade)" stroke="#1b2334" stroke-width="3"/>
+        <!-- visor -->
+        <path d="M142 180 L258 180 L250 212 L150 212 Z" fill="#0b0e14" stroke="#1b2334" stroke-width="3"/>
+        <g filter="url(#glow)">
+          <path d="M156 188 L196 192 L192 204 L160 202 Z" fill="#3ddc97"/>
+          <path d="M244 188 L204 192 L208 204 L240 202 Z" fill="#3ddc97"/>
+        </g>
+        <!-- faceplate -->
+        <path d="M160 222 L240 222 L232 290 L200 308 L168 290 Z" fill="url(#armor)" stroke="#1b2334" stroke-width="3"/>
+        <path d="M182 240 L218 240 L214 270 L186 270 Z" fill="#e5383b" stroke="#1b2334" stroke-width="2"/>
+        <line x1="190" y1="248" x2="210" y2="248" stroke="#1b2334" stroke-width="2"/>
+        <line x1="190" y1="256" x2="210" y2="256" stroke="#1b2334" stroke-width="2"/>
+        <line x1="191" y1="264" x2="209" y2="264" stroke="#1b2334" stroke-width="2"/>
+        <!-- panel lines -->
+        <path d="M150 150 L176 160 M250 150 L224 160 M140 250 L160 222 M260 250 L240 222" stroke="#1b2334" stroke-width="2" fill="none"/>
+        <!-- decals -->
+        <text x="262" y="170" font-family="JetBrains Mono, monospace" font-size="9" fill="#e5383b">KF</text>
+        <text x="122" y="170" font-family="JetBrains Mono, monospace" font-size="9" fill="#2f6fff">01</text>
+        <!-- HUD lines -->
+        <path d="M300 200 L350 200 L362 188" stroke="#2f6fff" fill="none"/>
+        <circle cx="300" cy="200" r="3" fill="#2f6fff"/>
+        <text x="320" y="216" font-family="JetBrains Mono, monospace" font-size="9" fill="#8a96b0">SENSOR</text>
+        <path d="M100 280 L50 280 L40 292" stroke="#ffc233" fill="none"/>
+        <circle cx="100" cy="280" r="3" fill="#ffc233"/>
+        <text x="40" y="272" font-family="JetBrains Mono, monospace" font-size="9" fill="#8a96b0">PANEL LINE</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HUB ================= -->
+<section id="hub">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="eyebrow">// 01 — Creators Hub</div>
+        <h2>Everything a builder needs</h2>
+      </div>
+      <p>One place for the whole hobby — from your first snap-fit to your first airbrushed custom.</p>
+    </div>
+    <div class="hub-grid">
+      <a href="#community" class="panel hub-card reveal">
+        <div class="icon">◈</div>
+        <h3>Community</h3>
+        <p>Share builds, get feedback on WIPs, and chat with other modelers in the channels.</p>
+        <span class="count">// 5 CHANNELS · LIVE FEED</span>
+      </a>
+      <a href="#commissions" class="panel hub-card reveal">
+        <div class="icon" style="background:#ffc23322;color:var(--yellow)">⚒</div>
+        <h3>Commissions</h3>
+        <p>Straight builds to full customs. Get an instant estimate and request a slot.</p>
+        <span class="count">// 4 SLOTS OPEN</span>
+      </a>
+      <a href="#shop" class="panel hub-card reveal">
+        <div class="icon" style="background:#3ddc9722;color:var(--green)">◎</div>
+        <h3>Hangar Shop</h3>
+        <p>Finished builds, resale kits, and custom parts ready to ship.</p>
+        <span class="count">// <b id="shopCount">0</b> ITEMS LISTED</span>
+      </a>
+      <a href="#learn" class="panel hub-card reveal">
+        <div class="icon" style="background:#e5383b22;color:var(--red)">✦</div>
+        <h3>Learn</h3>
+        <p>Grade breakdowns, tool lists, and step-by-step technique guides.</p>
+        <span class="count">// 8 GUIDES</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="eyebrow">// 02 — The Hangar</div>
+        <h2>Build Gallery</h2>
+      </div>
+      <div class="filters" id="filters">
+        <button class="chip on" data-f="all">All</button>
+        <button class="chip" data-f="HG">HG</button>
+        <button class="chip" data-f="RG">RG</button>
+        <button class="chip" data-f="MG">MG</button>
+        <button class="chip" data-f="PG">PG</button>
+        <button class="chip" data-f="custom">Customs</button>
+        <button class="chip" data-f="sale">For Sale</button>
+      </div>
+    </div>
+    <div class="gallery" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ================= COMMUNITY ================= -->
+<section id="community">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="eyebrow">// 03 — The Ready Room</div>
+        <h2>Community</h2>
+      </div>
+      <p>Create a free account to share your builds, get feedback on WIPs, build your pilot profile, and hang out in the channels.</p>
+      <button class="btn btn-red" data-share>+ Share your build</button>
+    </div>
+    <div class="mode-banner" id="modeBanner"></div>
+
+    <div class="comm-grid">
+      <div>
+        <div class="feed-head">
+          <div class="filters" id="feedFilters">
+            <button class="chip on" data-feed="latest">Latest</button>
+            <button class="chip" data-feed="top">Top</button>
+            <button class="chip" data-feed="wip">WIP</button>
+            <button class="chip" data-feed="finished">Finished</button>
+            <button class="chip" data-feed="mine">My builds</button>
+          </div>
+          <span class="muted mono-sm"><b id="postCount">0</b> posts</span>
+        </div>
+        <div class="feed" id="feed"></div>
+      </div>
+
+      <aside class="panel chat">
+        <div class="channel-list" id="channelList"></div>
+        <div class="chat-main">
+          <div class="chat-title" id="chatTitle"></div>
+          <div class="chat-log" id="chatLog" aria-live="polite"></div>
+          <form class="chat-form" id="chatForm">
+            <input id="chatInput" maxlength="500" placeholder="Message the channel…" autocomplete="off" aria-label="Message">
+            <button class="btn btn-primary btn-sm" type="submit" aria-label="Send">Send</button>
+          </form>
+          <div class="chat-identity" id="chatIdentity"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMMISSIONS ================= -->
+<section id="commissions">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="eyebrow">// 04 — Commission Bay</div>
+        <h2>Get your suit built</h2>
+      </div>
+      <p>Send a kit you own, or have one sourced. Every commission comes with progress photos and careful packing.</p>
+    </div>
+
+    <div class="tiers">
+      <div class="panel tier reveal">
+        <h3>Straight Build</h3>
+        <p class="desc">Clean out-of-box assembly. Perfect for shelf display.</p>
+        <div class="price">$25<small> + kit / grade base</small></div>
+        <ul>
+          <li>Nub cleanup &amp; sanding</li>
+          <li>Water-slide or sticker decals applied</li>
+          <li>Panel lining</li>
+          <li>Progress photos</li>
+        </ul>
+        <a href="#quote" class="btn btn-ghost" data-tier="straight">Select</a>
+      </div>
+      <div class="panel tier featured reveal">
+        <span class="ribbon">MOST POPULAR</span>
+        <h3>Detail Build</h3>
+        <p class="desc">Straight build plus finishing that makes it pop.</p>
+        <div class="price">$60<small> + kit / grade base</small></div>
+        <ul>
+          <li>Everything in Straight Build</li>
+          <li>Seam line removal</li>
+          <li>Matte / gloss topcoat</li>
+          <li>Detail painting &amp; light weathering</li>
+          <li>Display stand included</li>
+        </ul>
+        <a href="#quote" class="btn btn-primary" data-tier="detail">Select</a>
+      </div>
+      <div class="panel tier reveal">
+        <h3>Full Custom</h3>
+        <p class="desc">Your colors, your story. Full repaint and mods.</p>
+        <div class="price">$150<small> + kit / quoted</small></div>
+        <ul>
+          <li>Everything in Detail Build</li>
+          <li>Full airbrushed custom paint scheme</li>
+          <li>Kitbash / scratch-built parts</li>
+          <li>Heavy weathering or battle damage</li>
+          <li>LED lighting (optional)</li>
+        </ul>
+        <a href="#quote" class="btn btn-ghost" data-tier="custom">Select</a>
+      </div>
+    </div>
+
+    <div class="process">
+      <div class="panel step reveal"><span class="n">STEP 01</span><h5>Request</h5><p>Fill the form below with your kit and vision.</p></div>
+      <div class="panel step reveal"><span class="n">STEP 02</span><h5>Quote</h5><p>Get a final quote and timeline within 48 hours.</p></div>
+      <div class="panel step reveal"><span class="n">STEP 03</span><h5>Deposit</h5><p>50% deposit locks your slot in the queue.</p></div>
+      <div class="panel step reveal"><span class="n">STEP 04</span><h5>Build</h5><p>Progress photos at every major stage.</p></div>
+      <div class="panel step reveal"><span class="n">STEP 05</span><h5>Deliver</h5><p>Balance paid, packed safe, shipped tracked.</p></div>
+    </div>
+
+    <div class="panel quote reveal" id="quote">
+      <form id="quoteForm">
+        <div class="field">
+          <label for="qName">Name</label>
+          <input id="qName" required placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="qEmail">Email</label>
+          <input id="qEmail" type="email" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="qGrade">Grade</label>
+          <select id="qGrade">
+            <option value="SD">SD — Super Deformed</option>
+            <option value="HG" selected>HG — 1/144 High Grade</option>
+            <option value="RG">RG — 1/144 Real Grade</option>
+            <option value="MG">MG — 1/100 Master Grade</option>
+            <option value="PG">PG — 1/60 Perfect Grade</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="qTier">Service</label>
+          <select id="qTier">
+            <option value="straight">Straight Build</option>
+            <option value="detail" selected>Detail Build</option>
+            <option value="custom">Full Custom</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="qKit">Kit name</label>
+          <input id="qKit" placeholder="e.g. MG 1/100 ... Ver. Ka">
+        </div>
+        <div class="field full">
+          <label>Kit source</label>
+          <div class="checks">
+            <label><input type="radio" name="src" value="own" checked> I'll ship my kit</label>
+            <label><input type="radio" name="src" value="source"> Source it for me (+15%)</label>
+          </div>
+        </div>
+        <div class="field full">
+          <label>Add-ons</label>
+          <div class="checks" id="addons">
+            <label><input type="checkbox" value="25" data-name="Custom base / diorama"> Diorama base</label>
+            <label><input type="checkbox" value="40" data-name="LED lighting"> LED lighting</label>
+            <label><input type="checkbox" value="20" data-name="Water-slide decal set"> Water-slide decals</label>
+            <label><input type="checkbox" value="30" data-name="Rush (2 weeks)"> Rush delivery</label>
+          </div>
+        </div>
+        <div class="field full">
+          <label for="qNotes">Describe your vision</label>
+          <textarea id="qNotes" placeholder="Color scheme, references, weathering level, poses..."></textarea>
+        </div>
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field full">
+          <button class="btn btn-primary" type="submit">Submit Request</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+      <aside class="estimate">
+        <h4>Instant Estimate</h4>
+        <div class="est-row"><span>Grade base</span><b id="eGrade">$0</b></div>
+        <div class="est-row"><span>Service</span><b id="eTier">$0</b></div>
+        <div class="est-row"><span>Add-ons</span><b id="eAdd">$0</b></div>
+        <div class="est-row"><span>Sourcing</span><b id="eSrc">$0</b></div>
+        <div>
+          <small class="est-note">ESTIMATED LABOR</small>
+          <div class="est-total" id="eTotal">$0</div>
+        </div>
+        <div class="est-row"><span>Est. turnaround</span><b id="eTime">—</b></div>
+        <p class="est-note">Estimate excludes kit cost &amp; shipping. Final quote confirmed after review.</p>
+      </aside>
+    </div>
+
+    <div class="panel queue reveal">
+      <div><div class="eyebrow">Queue status</div><b style="font-family:var(--sans);font-size:1.3rem">6 / 10 slots filled</b></div>
+      <div class="queue-bar"><i></i></div>
+      <span style="font-family:var(--mono);font-size:.8rem;color:var(--muted)">Next opening: ~3 weeks</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SHOP ================= -->
+<section id="shop">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="eyebrow">// 05 — Hangar Shop</div>
+        <h2>Ready to deploy</h2>
+      </div>
+      <p>Finished builds and resale kits. Every completed piece is one of a kind.</p>
+    </div>
+    <div class="shop-grid" id="shopGrid"></div>
+  </div>
+</section>
+
+<!-- ================= LEARN ================= -->
+<section id="learn">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="eyebrow">// 06 — Pilot Academy</div>
+        <h2>Learn the craft</h2>
+      </div>
+      <p>New to the hobby? Start with the grade guide. Ready to level up? Dive into the technique library.</p>
+    </div>
+    <div class="two-col">
+      <div class="panel grade-table reveal">
+        <div style="padding:16px 24px 8px"><div class="eyebrow">Grade guide</div></div>
+        <div class="grade-row"><span class="g">SD</span><div>Super Deformed<small>Chibi-style, quick, fun. Great first kit.</small><div class="diff"><i class="on"></i><i></i><i></i><i></i><i></i></div></div><span class="scale">NON-SCALE</span></div>
+        <div class="grade-row"><span class="g">EG</span><div>Entry Grade<small>No tools needed. Snap together in an hour.</small><div class="diff"><i class="on"></i><i></i><i></i><i></i><i></i></div></div><span class="scale">1/144</span></div>
+        <div class="grade-row"><span class="g">HG</span><div>High Grade<small>Huge lineup, great articulation, ideal for customs.</small><div class="diff"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div></div><span class="scale">1/144</span></div>
+        <div class="grade-row"><span class="g">RG</span><div>Real Grade<small>MG-level detail at HG size. Tiny parts.</small><div class="diff"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div><span class="scale">1/144</span></div>
+        <div class="grade-row"><span class="g">MG</span><div>Master Grade<small>Inner frame, big presence, deep detail.</small><div class="diff"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></div><span class="scale">1/100</span></div>
+        <div class="grade-row"><span class="g">PG</span><div>Perfect Grade<small>The flagship. Massive, complex, often lit.</small><div class="diff"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div><span class="scale">1/60</span></div>
+      </div>
+      <div class="panel guides reveal" id="guideList">
+        <div style="padding:16px 24px 8px"><div class="eyebrow">Technique library</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CREATORS ================= -->
+<section id="creators">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="eyebrow">// 07 — Pilot Roster</div>
+        <h2>Featured creators</h2>
+      </div>
+      <p>Builders in the hub. Follow their work, or request a commission directly.</p>
+    </div>
+    <div class="creators" id="creatorGrid"></div>
+
+    <div class="panel cta-band reveal" style="margin-top:48px">
+      <div class="stripe"></div>
+      <div>
+        <h3>Join the hangar</h3>
+        <p>Get notified when commission slots open, new builds drop, or kits hit the shop.</p>
+      </div>
+      <form id="joinForm">
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="email" placeholder="you@example.com" required aria-label="Email">
+        <button class="btn btn-red" type="submit">Enlist</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#top" class="logo"><span>KIT<em>FORGE</em></span></a>
+        <p>A creators hub for mobile suit model builders. Commissions, customs, and a community of plastic pilots.</p>
+      </div>
+      <div><h6>Hub</h6><ul><li><a href="#community">Community</a></li>
+      <li><a href="#gallery">Gallery</a></li><li><a href="#creators">Creators</a></li><li><a href="#learn">Guides</a></li></ul></div>
+      <div><h6>Services</h6><ul><li><a href="#commissions">Commissions</a></li><li><a href="#shop">Shop</a></li><li><a href="#quote">Get a quote</a></li></ul></div>
+      <div><h6>Connect</h6><ul><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li><li><a href="#">Discord</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 KITFORGE. Fan-made hub — not affiliated with any kit manufacturer.</span>
+      <span>SYS.STATUS: ALL UNITS NOMINAL</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="panel modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+<script src="community.js"></script>
+</body>
+</html>
