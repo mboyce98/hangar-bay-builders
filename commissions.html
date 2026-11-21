@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Commissions — Kitforge</title>
+  <meta name="description" content="Get a mobile suit model kit built for you. Straight builds, detail builds and full customs, with an instant estimate.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M20 2 L36 11 V29 L20 38 L4 29 V11 Z" fill="none" stroke="#2f6fff" stroke-width="2.5"/>
+        <path d="M20 9 L28 14 L20 30 L12 14 Z" fill="#e5383b"/>
+        <path d="M12 14 L20 19 L28 14" fill="none" stroke="#ffc233" stroke-width="2"/>
+      </svg>
+      <span>KIT<em>FORGE</em></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#community">Community</a></li>
+      <li><a href="index.html#learn">Learn</a></li>
+      <li><a href="index.html#creators">Pilots</a></li>
+      <li><a href="commissions.html" class="active">Commissions</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <a href="index.html" class="back-link">← Back to the hangar</a>
+    <div class="eyebrow">// Commission Bay</div>
+    <h1>Get your suit built</h1>
+    <p class="lead">Send a kit you own, or have one sourced. Every commission comes with progress photos and careful packing. Prices below are starting points — you'll get a final quote before anything is paid.</p>
+  </div>
+</header>
+
+<section class="page-body">
+  <div class="wrap">
+    <div class="tiers">
+      <div class="panel tier">
+        <h3>Straight Build</h3>
+        <p class="desc">Clean out-of-box assembly. Perfect for shelf display.</p>
+        <div class="price">$25<small> + kit / grade base</small></div>
+        <ul>
+          <li>Nub cleanup &amp; sanding</li>
+          <li>Water-slide or sticker decals applied</li>
+          <li>Panel lining</li>
+          <li>Progress photos</li>
+        </ul>
+        <a href="#quote" class="btn btn-ghost" data-tier="straight">Select</a>
+      </div>
+      <div class="panel tier featured">
+        <h3>Detail Build</h3>
+        <p class="desc">Straight build plus finishing that makes it pop.</p>
+        <div class="price">$60<small> + kit / grade base</small></div>
+        <ul>
+          <li>Everything in Straight Build</li>
+          <li>Seam line removal</li>
+          <li>Matte / gloss topcoat</li>
+          <li>Detail painting &amp; light weathering</li>
+          <li>Display stand included</li>
+        </ul>
+        <a href="#quote" class="btn btn-primary" data-tier="detail">Select</a>
+      </div>
+      <div class="panel tier">
+        <h3>Full Custom</h3>
+        <p class="desc">Your colors, your story. Full repaint and mods.</p>
+        <div class="price">$150<small> + kit / quoted</small></div>
+        <ul>
+          <li>Everything in Detail Build</li>
+          <li>Full airbrushed custom paint scheme</li>
+          <li>Kitbash / scratch-built parts</li>
+          <li>Heavy weathering or battle damage</li>
+          <li>LED lighting (optional)</li>
+        </ul>
+        <a href="#quote" class="btn btn-ghost" data-tier="custom">Select</a>
+      </div>
+    </div>
+
+    <div class="process">
+      <div class="panel step"><span class="n">STEP 01</span><h5>Request</h5><p>Fill in the form below with your kit and vision.</p></div>
+      <div class="panel step"><span class="n">STEP 02</span><h5>Quote</h5><p>Get a final quote and timeline within 48 hours.</p></div>
+      <div class="panel step"><span class="n">STEP 03</span><h5>Deposit</h5><p>50% deposit locks your slot in the queue.</p></div>
+      <div class="panel step"><span class="n">STEP 04</span><h5>Build</h5><p>Progress photos at every major stage.</p></div>
+      <div class="panel step"><span class="n">STEP 05</span><h5>Deliver</h5><p>Balance paid, packed safe, shipped tracked.</p></div>
+    </div>
+
+    <div class="panel quote" id="quote">
+      <form id="quoteForm">
+        <div class="field">
+          <label for="qName">Name</label>
+          <input id="qName" required placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="qEmail">Email</label>
+          <input id="qEmail" type="email" required placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="qGrade">Grade</label>
+          <select id="qGrade">
+            <option value="SD">SD — Super Deformed</option>
+            <option value="HG" selected>HG — 1/144 High Grade</option>
+            <option value="RG">RG — 1/144 Real Grade</option>
+            <option value="MG">MG — 1/100 Master Grade</option>
+            <option value="PG">PG — 1/60 Perfect Grade</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="qTier">Service</label>
+          <select id="qTier">
+            <option value="straight">Straight Build</option>
+            <option value="detail" selected>Detail Build</option>
+            <option value="custom">Full Custom</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="qKit">Kit name</label>
+          <input id="qKit" placeholder="Which kit do you want built?">
+        </div>
+        <div class="field full">
+          <label>Kit source</label>
+          <div class="checks">
+            <label><input type="radio" name="src" value="own" checked> I'll ship my kit</label>
+            <label><input type="radio" name="src" value="source"> Source it for me (+15%)</label>
+          </div>
+        </div>
+        <div class="field full">
+          <label>Add-ons</label>
+          <div class="checks" id="addons">
+            <label><input type="checkbox" value="25" data-name="Custom base / diorama"> Diorama base</label>
+            <label><input type="checkbox" value="40" data-name="LED lighting"> LED lighting</label>
+            <label><input type="checkbox" value="20" data-name="Water-slide decal set"> Water-slide decals</label>
+            <label><input type="checkbox" value="30" data-name="Rush (2 weeks)"> Rush delivery</label>
+          </div>
+        </div>
+        <div class="field full">
+          <label for="qNotes">Describe your vision</label>
+          <textarea id="qNotes" placeholder="Color scheme, references, weathering level, poses..."></textarea>
+        </div>
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field full">
+          <button class="btn btn-primary" type="submit">Submit Request</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+      <aside class="estimate">
+        <h4>Instant Estimate</h4>
+        <div class="est-row"><span>Grade base</span><b id="eGrade">$0</b></div>
+        <div class="est-row"><span>Service</span><b id="eTier">$0</b></div>
+        <div class="est-row"><span>Add-ons</span><b id="eAdd">$0</b></div>
+        <div class="est-row"><span>Sourcing</span><b id="eSrc">$0</b></div>
+        <div>
+          <small class="est-note">ESTIMATED LABOR</small>
+          <div class="est-total" id="eTotal">$0</div>
+        </div>
+        <div class="est-row"><span>Est. turnaround</span><b id="eTime">—</b></div>
+        <p class="est-note">Estimate excludes kit cost &amp; shipping. Final quote confirmed after review.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom" style="margin-top:0;border-top:0;padding-top:0">
+      <span>© 2026 KITFORGE. Fan-made hub — not affiliated with any kit manufacturer.</span>
+      <a href="index.html" style="color:var(--blue)">← Back to the hangar</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

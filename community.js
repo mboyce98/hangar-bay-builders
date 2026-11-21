@@ -192,6 +192,10 @@ function localDb() {
       safePersist(() => Object.assign(u, before));
     },
     async uploadAvatar(file) { requireUser(); return resizeImage(file, 256, 0.8); },
+    async listProfiles(limit = 8) {
+      return [...data.users].sort((a, b) => b.created_at.localeCompare(a.created_at)).slice(0, limit)
+        .map(({ email, ...rest }) => ({ ...rest }));
+    },
     // ---- posts ----
     async listPosts({ userId } = {}) {
       return data.posts.filter((p) => !userId || p.user_id === userId).map(shapePost).sort((a, b) => b.created_at.localeCompare(a.created_at));
@@ -340,6 +344,10 @@ async function supabaseDb() {
       ok(await sb.from("profiles").update(fields).eq("id", id));
     },
     async uploadAvatar(file) { const id = await requireUid(); return upload("avatars", id, await resizeImage(file, 256, 0.85, true)); },
+    async listProfiles(limit = 8) {
+      return ok(await sb.from("profiles").select("id,username,avatar_url,bio,specialties,open_commissions,is_admin,created_at")
+        .order("created_at", { ascending: false }).limit(limit));
+    },
     // ---- posts ----
     async listPosts({ userId } = {}) {
       let q = sb.from("posts").select(`*, ${author("posts")}, post_likes(count), comments(count)`).order("created_at", { ascending: false }).limit(60);
@@ -444,6 +452,7 @@ function renderAccount() {
 document.addEventListener("click", () => { const m = $("#acctMenu"); if (m) m.hidden = true; });
 
 function renderGates() {
+  $$(".cta-band").forEach((el) => (el.hidden = !!me));
   const input = $("#chatInput");
   input.placeholder = me ? `Message #${CHANNELS.find((c) => c.id === channel).name}` : "Sign in to join the chat";
   $("#chatIdentity").innerHTML = me
@@ -934,9 +943,7 @@ document.addEventListener("click", async (e) => {
   if (t.closest("[data-act-share]")) return openPostEditor();
   const comm = t.closest("[data-commission]");
   if (comm) {
-    closeModal();
-    $("#qNotes").value = `Commission request for @${comm.dataset.commission}: `;
-    $("#quote").scrollIntoView({ behavior: "smooth" });
+    location.href = `commissions.html?for=${encodeURIComponent(comm.dataset.commission)}#quote`;
     return;
   }
   if (t.closest("[data-copy-link]")) {
@@ -961,10 +968,31 @@ function routeHash() {
 
 // ---------------- INIT ----------------
 let refreshTimer;
+/* Pilot roster: the newest real members (no sample people in live mode). */
+async function refreshRoster() {
+  const el = $("#creatorGrid");
+  if (!el) return;
+  try {
+    const list = await db.listProfiles(8);
+    el.innerHTML = list.length ? list.map((p) => `
+      <div class="panel creator">
+        ${avatar(p, 72)}
+        ${p.open_commissions ? `<span class="open-badge yes">● OPEN FOR COMMISSIONS</span>` : ""}
+        <h4>${esc(p.username)}</h4>
+        <p class="spec">${esc((p.specialties || []).join(" · ") || "Builder")}</p>
+        <button class="btn btn-ghost btn-sm" data-user="${esc(p.username)}">View profile</button>
+      </div>`).join("")
+      : `<div class="panel empty">No pilots yet — create an account and be the first on the roster.</div>`;
+  } catch (e) {
+    el.innerHTML = `<div class="panel empty">Couldn't load pilots: ${esc(e.message)}</div>`;
+  }
+}
+
 function refreshAll() {
   clearTimeout(refreshTimer);
   refreshTimer = setTimeout(() => {
     refreshFeed();
+    refreshRoster();
     refreshChat(false);
     if (openPostId && $("#commentList")) renderComments(openPostId);
   }, 150);
@@ -1016,7 +1044,7 @@ async function initCommunity() {
   me = await db.currentUser().catch(() => null);
   renderAccount();
   renderChannels();
-  await Promise.all([refreshFeed(), refreshChat(true)]);
+  await Promise.all([refreshFeed(), refreshChat(true), refreshRoster()]);
   routeHash();
   window.addEventListener("hashchange", routeHash);
   setInterval(() => { renderFeed(); refreshChat(false); }, 60000); // keep "5m ago" labels fresh
