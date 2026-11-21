@@ -7,7 +7,7 @@
   <meta name="description" content="Every Gundam series and timeline explained: Universal Century, Cosmic Era, After Colony and more, plus key characters, mobile suits and where to start watching.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
 
@@ -40,6 +40,9 @@
     <div class="eyebrow">// The Archives</div>
     <h1>Every Gundam, explained</h1>
     <p class="lead">Gundam spans more than four decades and a dozen separate timelines. Here's every major series, the history of each world, and the characters and mobile suits worth knowing, so you know the story behind the kit on your bench. Summaries are spoiler-light.</p>
+    <nav class="jump-links" aria-label="On this page">
+      <a href="#start">Where to start</a><a href="#eras">Calendars</a><a href="#timelines">Timelines</a><a href="#series">Series</a><a href="#characters">Characters</a>
+    </nav>
   </div>
 </header>
 
@@ -69,11 +72,25 @@
   </div>
 </section>
 
+<section id="timelines">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">// 03 — History</div>
+        <h2>Timelines</h2>
+      </div>
+      <p>The One Year War, event by event, plus the major wars of every other world. Tap a timeline, then any event's link to jump to its series.</p>
+    </div>
+    <div class="tl-tabs" id="tlTabs" role="tablist"></div>
+    <div class="panel tl-panel" id="tlPanel"></div>
+  </div>
+</section>
+
 <section id="series">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="eyebrow">// 03 — The shows</div>
+        <div class="eyebrow">// 04 — The shows</div>
         <h2>Series &amp; films</h2>
       </div>
       <div class="series-tools">
@@ -90,7 +107,7 @@
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <div class="eyebrow">// 04 — Pilot files</div>
+        <div class="eyebrow">// 05 — Pilot files</div>
         <h2>Characters to know</h2>
       </div>
       <p>The pilots, rivals and leaders you'll see on box art and in conversation.</p>
@@ -110,6 +127,7 @@
 
 <div class="toast" id="toast"></div>
 <script src="app.js?v=5"></script>
-<script src="lore.js?v=5"></script>
+<script src="lore.js?v=6"></script>
+<script src="timeline.js?v=6"></script>
 </body>
 </html>

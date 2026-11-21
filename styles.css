@@ -576,3 +576,40 @@ img.c-avatar { object-fit: cover; padding: 0; }
   .series-tools { width: 100%; }
   .detail-cols { grid-template-columns: 1fr; }
 }
+.art-strip { display: flex; gap: 8px; margin-bottom: 14px; overflow-x: auto; scrollbar-width: thin; }
+.mech-thumb { flex-shrink: 0; display: block; border-radius: 8px; background-image: url("images/gundam-grid.jpg"); background-repeat: no-repeat;
+  border: 1px solid var(--line); box-shadow: 0 6px 18px -8px #000; }
+
+/* ---------- ARCHIVES: TIMELINES ---------- */
+.jump-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.jump-links a { font-family: var(--mono); font-size: .74rem; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }
+.jump-links a:hover { color: var(--text); border-color: var(--blue); }
+.tl-tabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: thin; padding-bottom: 2px; }
+.tl-tab { white-space: nowrap; font-family: var(--sans); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; font-size: .9rem;
+  padding: 10px 16px; border-radius: 10px 10px 0 0; border: 1px solid var(--line); border-bottom: 0; background: var(--bg-2); color: var(--muted); cursor: pointer; }
+.tl-tab:hover { color: var(--text); }
+.tl-tab.on { color: var(--ec); background: var(--panel); box-shadow: inset 0 3px 0 var(--ec); }
+.tl-panel { border-top-left-radius: 0; padding: 28px; display: grid; gap: 28px; }
+.tl-panel.has-art { grid-template-columns: minmax(220px, 340px) 1fr; align-items: start; }
+.tl-art { position: sticky; top: 84px; margin: 0; }
+.tl-art img { width: 100%; border-radius: 12px; border: 1px solid var(--line); box-shadow: 0 30px 60px -30px #000; display: block; }
+.tl-art figcaption { font-family: var(--mono); font-size: .7rem; color: var(--muted); margin-top: 8px; text-align: center; }
+.tl-body h3 { font-family: var(--sans); font-size: 1.9rem; text-transform: uppercase; line-height: 1.05; }
+.tl-intro { color: var(--muted); margin: 8px 0 22px; max-width: 680px; }
+.tl-list { list-style: none; position: relative; padding-left: 26px; display: grid; gap: 20px; }
+.tl-list::before { content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(var(--ec), transparent); opacity: .6; }
+.tl-list li { position: relative; }
+.tl-list li::before { content: ""; position: absolute; left: -26px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 2px solid var(--ec); }
+.tl-date { font-family: var(--mono); font-size: .74rem; font-weight: 700; color: var(--ec); }
+.tl-list h4 { font-family: var(--sans); font-size: 1.15rem; text-transform: uppercase; margin: 2px 0 4px; }
+.tl-list p { color: #c4cbdb; font-size: .9rem; max-width: 680px; }
+.tl-link { display: inline-block; margin-top: 6px; font-family: var(--mono); font-size: .72rem; color: var(--blue); }
+.tl-link:hover { text-decoration: underline; }
+@media (max-width: 860px) {
+  .tl-panel.has-art { grid-template-columns: 1fr; }
+  .tl-art { position: static; max-width: 300px; margin: 0 auto; }
+}
+@media (max-width: 560px) {
+  .tl-art { max-width: 190px; }
+}
+@media (max-width: 560px) { .tl-panel { padding: 20px 16px; } }
